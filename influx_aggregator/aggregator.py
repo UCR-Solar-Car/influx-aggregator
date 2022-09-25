@@ -18,7 +18,7 @@ with InfluxDBClient(url="http://localhost:8086", token=token, org=org) as client
 
 
     for i in range(1000):
-        point = Point("fuck").field("temperature", float(random.randint(1, 100)) )
+        point = Point("testing").field("temperature", float(random.randint(1, 100)) )
         write_api.write(bucket, org, point)
         time.sleep(1)
 
