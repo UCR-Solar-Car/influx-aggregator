@@ -9,7 +9,15 @@ packages = [{include = "influx_aggregator"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 influxdb-client = "^1.32.0"
+toml = "^0.10.2"
 
+[tool.poetry.scripts]
+aggregator = "influx_aggregator:aggregator"
+
+
+[tool.poetry.group.dev.dependencies]
+yapf = "^0.32.0"
+pylint = "^2.15.3"
 
 [build-system]
 requires = ["poetry-core"]
