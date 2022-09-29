@@ -1,7 +1,9 @@
-from datetime import datetime 
+from datetime import datetime
 from enum import IntEnum
 
+
 class Payload:
+
     def __init__(self):
         self.uid = ""
         self.timestamp = datetime.now()
@@ -10,7 +12,9 @@ class Payload:
         self.tire_pressure = TirePressure()
         self.icons = Icons()
 
+
 class Motor:
+
     def __init__(self):
         self.motor_voltage = 0.0
         self.motor_temperature = 0.0
@@ -18,7 +22,9 @@ class Motor:
         self.speed = 0
         self.distance = 0
 
+
 class Battery:
+
     def __init__(self):
         self.battery_voltage = 0.0
         self.battery_temperature = 0.0
@@ -27,14 +33,18 @@ class Battery:
         self.automatic_power_opening: False
         self.range = 0.0
 
+
 class TirePressure:
+
     def __init__(self):
         self.front_left = 0
         self.front_right = 0
         self.back_left = 0
         self.back_right = 0
 
+
 class Icons:
+
     def __init__(self):
         self.left_indicator = False
         self.right_indicator = False
@@ -43,6 +53,7 @@ class Icons:
         self.horn = False
         self.cruise_control = False
         self.gears = Gears.PARKING
+
 
 class Gears(IntEnum):
     PARKING = 1
