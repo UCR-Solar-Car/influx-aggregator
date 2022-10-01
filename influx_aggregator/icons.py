@@ -1,5 +1,6 @@
 from enum import IntEnum
 
+
 class Icons:
 
     def __init__(self):

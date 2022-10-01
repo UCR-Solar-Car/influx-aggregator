@@ -40,6 +40,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
-      - name: Analysing the code with pylint
+      - name: Checking code formatting with YAPF
         run: |
           poetry run yapf influx_aggregator/ -dr
