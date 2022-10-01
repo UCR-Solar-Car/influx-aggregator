@@ -8,9 +8,9 @@ import random
 import time
 
 # You can generate an API token from the "API Tokens Tab" in the UI
-token = "bNMiIcMJcrP5x5YQM0D91Rod2hakW_aodrFfr6yPbN4crDJbJw4dmb_cgwclH80vql6_nOhih7MHiwkLDztcfA=="
-org = "UCR Solar Car"
-bucket = "Telemetry"
+token = "uthxvFH-S6OLkkpzGWxqCjA9AydTZPRA2pgUVI_BFyQzA6cLKjGgQpa2tqitYItDw11wxptYeJK65fZ1xmFyfg=="
+org = "UCRSolarCar"
+bucket = "Bucket"
 
 with InfluxDBClient(url="http://localhost:8086", token=token, org=org) as client:
 
