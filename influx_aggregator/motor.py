@@ -6,4 +6,3 @@ class Motor:
         self.motor_warning = False
         self.speed = 0
         self.distance = 0
-        

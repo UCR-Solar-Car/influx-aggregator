@@ -14,4 +14,3 @@ class Payload:
         self.battery = Battery()
         self.tire_pressure = TirePressure()
         self.icons = Icons()
-        
