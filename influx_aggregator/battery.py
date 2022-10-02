@@ -7,3 +7,4 @@ class Battery:
         self.bps_fault = False
         self.automatic_power_opening: False
         self.range = 0.0
+        
