@@ -6,11 +6,15 @@ from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 import random
 import time
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # You can generate an API token from the "API Tokens Tab" in the UI
-token = "uthxvFH-S6OLkkpzGWxqCjA9AydTZPRA2pgUVI_BFyQzA6cLKjGgQpa2tqitYItDw11wxptYeJK65fZ1xmFyfg=="
-org = "UCRSolarCar"
-bucket = "Bucket"
+token = os.getenv(token)
+org = os.getenv(token)
+bucket = os.getenv(token)
 
 with InfluxDBClient(url="http://localhost:8086", token=token, org=org) as client:
 
