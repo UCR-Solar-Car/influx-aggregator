@@ -9,13 +9,14 @@ TOKEN = "bNMiIcMJcrP5x5YQM0D91Rod2hakW_aodrFfr6yPbN4crDJbJw4dmb_cgwclH80vql6_nOh
 ORG = "UCR Solar Car"
 BUCKET = "Telemetry"
 
-with InfluxDBClient(url="http://localhost:8086", token=TOKEN, org=ORG) as client:
+with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
+                    org=ORG) as client:
 
     write_api = client.write_api(write_options=SYNCHRONOUS)
 
-
     for i in range(1000):
-        point = Point("testing").field("temperature", float(random.randint(1, 100)) )
+        point = Point("testing").field("temperature",
+                                       float(random.randint(1, 100)))
         write_api.write(BUCKET, ORG, point)
         time.sleep(1)
 
