@@ -6,14 +6,12 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 from environs import Env
 
 ENVIRONMENT = "dev"
-production = ".env.production"
-dev = ".env.dev"
 
 env = Env()
 if ENVIRONMENT == "dev":
-  env.read_env(dev, recurse=False)
+  env.read_env(".env.dev", recurse=False)
 elif ENVIRONMENT == "production":
-  env.read_env(production, recurse=False)
+  env.read_env(".env.production", recurse=False)
 
 TOKEN = env("TOKEN")
 ORG = env("ORG")
