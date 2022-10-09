@@ -105,6 +105,7 @@ celerybeat.pid
 # Environments
 .env
 .env.dev
+.env.production
 .venv
 .bashrc
 env/
