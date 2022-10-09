@@ -3,16 +3,14 @@ import random
 import time
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
-from dotenv import load_dotenv
-import os
+from environs import Env
 
-load_dotenv()
+env = Env()
+env.read_env()
 
-# You can generate an API token from the "API Tokens Tab" in the UI
-token = os.getenv(token)
-org = os.getenv(token)
-bucket = os.getenv(token)
-
+TOKEN = env("TOKEN")
+ORG = env("ORG")
+BUCKET = env("BUCKET")
 
 with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
                     org=ORG) as client:
