@@ -1,11 +1,11 @@
 class Motor:
 
     def __init__(self):
-        self._motor_voltage : float = 0.0
-        self._motor_temperature : float = 0.0
-        self._motor_warning : bool = False
-        self._speed : int = 0
-        self._distance : int = 0
+        self._motor_voltage: float = 0.0
+        self._motor_temperature: float = 0.0
+        self._motor_warning: bool = False
+        self._speed: int = 0
+        self._distance: int = 0
 
     def set_motor_voltage(self, m_volatge) -> None:
         self._motor_voltage = m_volatge

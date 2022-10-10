@@ -1,21 +1,23 @@
 from enum import IntEnum
 
+
 class Gears(IntEnum):
     PARKING = 1
     DRIVE = 2
     NEUTRAL = 3
     REVERSE = 4
 
+
 class Icons:
 
     def __init__(self):
-        self._left_indicator : bool = False
-        self._right_indicator : bool = False
-        self._day_lights : bool = False
-        self._night_lights : bool = False
-        self._horn : bool = False
-        self._cruise_control : bool = False
-        self._gears : Gears = Gears.PARKING
+        self._left_indicator: bool = False
+        self._right_indicator: bool = False
+        self._day_lights: bool = False
+        self._night_lights: bool = False
+        self._horn: bool = False
+        self._cruise_control: bool = False
+        self._gears: Gears = Gears.PARKING
 
     def set_left_indicator(self, l_indicator) -> None:
         self._left_indicator = l_indicator
