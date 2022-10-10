@@ -9,9 +9,9 @@ ENVIRONMENT = "dev"
 
 env = Env()
 if ENVIRONMENT == "dev":
-  env.read_env(".env.dev", recurse=False)
+    env.read_env(".env.dev", recurse=False)
 elif ENVIRONMENT == "production":
-  env.read_env(".env.production", recurse=False)
+    env.read_env(".env.production", recurse=False)
 
 TOKEN = env("TOKEN")
 ORG = env("ORG")
