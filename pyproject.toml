@@ -10,6 +10,7 @@ packages = [{include = "influx_aggregator"}]
 python = "^3.10"
 influxdb-client = "^1.32.0"
 toml = "^0.10.2"
+environs = "^9.5.0"
 
 [tool.poetry.scripts]
 aggregator = "influx_aggregator:aggregator"
