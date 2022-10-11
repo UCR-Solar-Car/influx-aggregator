@@ -5,8 +5,13 @@ from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 from environs import Env
 
+ENVIRONMENT = "dev"
+
 env = Env()
-env.read_env()
+if ENVIRONMENT == "dev":
+    env.read_env(".env.dev", recurse=False)
+elif ENVIRONMENT == "production":
+    env.read_env(".env.production", recurse=False)
 
 TOKEN = env("TOKEN")
 ORG = env("ORG")
