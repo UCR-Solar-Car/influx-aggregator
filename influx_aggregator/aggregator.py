@@ -19,7 +19,6 @@ BUCKET = env("BUCKET")
 
 with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
                     org=ORG) as client:
-
     write_api = client.write_api(write_options=SYNCHRONOUS)
 
     for i in range(1000):
