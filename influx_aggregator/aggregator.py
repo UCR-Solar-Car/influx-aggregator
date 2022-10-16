@@ -3,11 +3,19 @@ import random
 import time
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
+from environs import Env
 
-# You can generate an API token from the "API Tokens Tab" in the UI
-TOKEN = "bNMiIcMJcrP5x5YQM0D91Rod2hakW_aodrFfr6yPbN4crDJbJw4dmb_cgwclH80vql6_nOhih7MHiwkLDztcfA=="
-ORG = "UCR Solar Car"
-BUCKET = "Telemetry"
+ENVIRONMENT = "dev"
+
+env = Env()
+if ENVIRONMENT == "dev":
+    env.read_env(".env.dev", recurse=False)
+elif ENVIRONMENT == "production":
+    env.read_env(".env.production", recurse=False)
+
+TOKEN = env("TOKEN")
+ORG = env("ORG")
+BUCKET = env("BUCKET")
 
 with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
                     org=ORG) as client:
