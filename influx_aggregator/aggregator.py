@@ -28,3 +28,5 @@ with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
         time.sleep(1)
 
     client.close()
+
+
