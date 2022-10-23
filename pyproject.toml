@@ -14,7 +14,7 @@ DateTime = "^4.7"
 environs = "^9.5.0"
 
 [tool.poetry.scripts]
-aggregator = "influx_aggregator:aggregator"
+aggregator = "influx_aggregator.aggregator:aggregator"
 
 
 [tool.poetry.group.dev.dependencies]
