@@ -5,7 +5,7 @@ from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 from environs import Env
 
-from influx_aggregator.payload import Payload
+from payload import Payload
 
 ENVIRONMENT = "dev"
 
