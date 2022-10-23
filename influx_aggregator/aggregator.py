@@ -5,28 +5,38 @@ from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 from environs import Env
 
-ENVIRONMENT = "dev"
 
-env = Env()
-if ENVIRONMENT == "dev":
-    env.read_env(".env.dev", recurse=False)
-elif ENVIRONMENT == "production":
-    env.read_env(".env.production", recurse=False)
+def env_setup():
+    enviorment = "dev"
 
-TOKEN = env("TOKEN")
-ORG = env("ORG")
-BUCKET = env("BUCKET")
+    env = Env()
+    if enviorment == "dev":
+        env.read_env(".env.dev", recurse=False)
+    elif enviorment == "production":
+        env.read_env(".env.production", recurse=False)
 
-with InfluxDBClient(url="http://localhost:8086", token=TOKEN,
-                    org=ORG) as client:
-    write_api = client.write_api(write_options=SYNCHRONOUS)
+    token = env("TOKEN")
+    org = env("ORG")
+    bucket = env("BUCKET")
 
-    for i in range(1000):
-        point = Point("testing").field("temperature",
-                                       float(random.randint(1, 100)))
-        write_api.write(BUCKET, ORG, point)
-        time.sleep(1)
+    return token, org, bucket
 
-    client.close()
+def aggregator():
+    setup = env_setup()
 
+    token = setup[0]
+    org = setup[1]
+    bucket = setup[2]
+
+    with InfluxDBClient(url="http://localhost:8086", token=token,
+                        org=org) as client:
+        write_api = client.write_api(write_options=SYNCHRONOUS)
+
+        for _ in range(1000):
+            point = Point("testing").field("temperature",
+                                           float(random.randint(1, 100)))
+            write_api.write(bucket, org, point)
+            time.sleep(1)
+
+        client.close()
 
