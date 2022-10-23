@@ -12,6 +12,7 @@ influxdb-client = "^1.32.0"
 toml = "^0.10.2"
 DateTime = "^4.7"
 environs = "^9.5.0"
+pyserial = "^3.5"
 
 [tool.poetry.scripts]
 aggregator = "influx_aggregator.aggregator:aggregator"
