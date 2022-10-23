@@ -6,6 +6,7 @@ from .icons import Icons
 
 #pylint: skip-file
 
+
 class Payload:
 
     def __init__(self):
