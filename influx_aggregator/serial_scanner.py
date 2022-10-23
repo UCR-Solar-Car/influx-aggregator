@@ -7,8 +7,8 @@ class SerialScanner:
     port = ''
     #ser = Serial(port)
     ser = Serial(port,
-                        baudrate=9600,
-                        parity=PARITY_NONE,
-                        stopbits=STOPBITS_ONE)
+                 baudrate=9600,
+                 parity=PARITY_NONE,
+                 stopbits=STOPBITS_ONE)
     bytesToRead = ser.inWaiting()
     ser.read(bytesToRead)
