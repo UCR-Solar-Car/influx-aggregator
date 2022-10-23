@@ -21,6 +21,7 @@ def env_setup():
 
     return token, org, bucket
 
+
 def aggregator():
     setup = env_setup()
 
@@ -39,4 +40,3 @@ def aggregator():
             time.sleep(1)
 
         client.close()
-        
