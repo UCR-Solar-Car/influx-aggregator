@@ -40,3 +40,4 @@ def aggregator():
             time.sleep(1)
 
         client.close()
+        
