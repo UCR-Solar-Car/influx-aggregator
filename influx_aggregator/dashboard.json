@@ -199,7 +199,7 @@
             "type": "influxdb",
             "uid": "3VnHIq74z"
           },
-          "query": "",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -207,10 +207,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -282,14 +279,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Motor Voltage",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -361,14 +365,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Motor Temperature",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -440,14 +451,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_range\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Battery Range",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -519,14 +537,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_speed\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Motor Speed",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -598,14 +623,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_distance\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Motor Distance",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -677,14 +709,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"BR_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Tire Pressure (Front Left)",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -756,14 +795,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"FR_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Tire Pressure (Front Right)",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -835,14 +881,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_L_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Left Indicator",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -914,14 +967,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_R_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Right Indicator",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -993,14 +1053,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_horn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Horn",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1072,14 +1139,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_cruise_control\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Cruise Control",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1151,14 +1225,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_cruise_control\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Day Lights",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1230,11 +1311,24 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_night_lights\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Night Lights",
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "3VnHIq74z"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -1283,7 +1377,7 @@
             "type": "influxdb",
             "uid": "7iG_Ar74k"
           },
-          "query": "from(bucket: \"Bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_warning\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_warning\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -1291,10 +1385,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1366,14 +1457,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_warning\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Motor Fault",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1445,14 +1543,21 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"BL_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Tire Pressure (Back Left)",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "WM5SI3n4k"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1524,6 +1629,16 @@
           "sort": "none"
         }
       },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "3VnHIq74z"
+          },
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"BR_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "refId": "A"
+        }
+      ],
       "title": "Tire Pressure (Back Right)",
       "type": "timeseries"
     },
