@@ -29,7 +29,10 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "3VnHIq74z"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -107,7 +110,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -196,8 +199,7 @@
             "type": "influxdb",
             "uid": "3VnHIq74z"
           },
-
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "",
           "refId": "A"
         }
       ],
@@ -205,7 +207,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -277,16 +282,6 @@
           "sort": "none"
         }
       },
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "xb97S37Vk"
-          },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
-          "refId": "A"
-        }
-      ],
       "title": "Motor Voltage",
       "type": "timeseries"
     },
@@ -607,10 +602,9 @@
       "type": "timeseries"
     },
     {
-
       "datasource": {
         "type": "influxdb",
-        "uid": "3VnHIq74z"
+        "uid": "WM5SI3n4k"
       },
       "fieldConfig": {
         "defaults": {
@@ -683,6 +677,7 @@
           "sort": "none"
         }
       },
+
       "targets": [
         {
           "datasource": {
@@ -693,11 +688,15 @@
           "refId": "A"
         }
       ],
+
       "title": "Tire Pressure (Front Left)",
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -769,16 +768,6 @@
           "sort": "none"
         }
       },
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "xb97S37Vk"
-          },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"FR_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
-          "refId": "A"
-        }
-      ],
       "title": "Tire Pressure (Front Right)",
       "type": "timeseries"
     },
@@ -1099,7 +1088,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1171,21 +1163,14 @@
           "sort": "none"
         }
       },
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "3VnHIq74z"
-          },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_day_lights\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
-          "refId": "A"
-        }
-      ],
       "title": "Day Lights",
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1257,16 +1242,6 @@
           "sort": "none"
         }
       },
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "3VnHIq74z"
-          },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_night_lights\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
-          "refId": "A"
-        }
-      ],
       "title": "Night Lights",
       "type": "timeseries"
     },
@@ -1313,7 +1288,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -1407,7 +1382,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1479,23 +1457,13 @@
           "sort": "none"
         }
       },
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "xb97S37Vk"
-          },
-          "query": "from(bucket: \"Bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"TIRE_PRESSURE\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"BL_tire_pressure\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
-          "refId": "A"
-        }
-      ],
       "title": "Tire Pressure (Back Left)",
       "type": "timeseries"
     },
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "3VnHIq74z"
+        "uid": "WM5SI3n4k"
       },
       "fieldConfig": {
         "defaults": {
@@ -1568,6 +1536,7 @@
           "sort": "none"
         }
       },
+
       "targets": [
         {
           "datasource": {
@@ -1578,6 +1547,7 @@
           "refId": "A"
         }
       ],
+
       "title": "Tire Pressure (Back Right)",
       "type": "timeseries"
     },
@@ -1677,6 +1647,5 @@
   "title": "Car Data",
   "uid": "lH2UIfS4z",
   "version": 4,
-
   "weekStart": ""
 }
