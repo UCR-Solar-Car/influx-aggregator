@@ -29,7 +29,10 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "3VnHIq74z"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -196,7 +199,6 @@
             "type": "influxdb",
             "uid": "3VnHIq74z"
           },
-
           "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
@@ -205,7 +207,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -647,10 +652,9 @@
       "type": "timeseries"
     },
     {
-
       "datasource": {
         "type": "influxdb",
-        "uid": "3VnHIq74z"
+        "uid": "WM5SI3n4k"
       },
       "fieldConfig": {
         "defaults": {
@@ -723,6 +727,7 @@
           "sort": "none"
         }
       },
+
       "targets": [
         {
           "datasource": {
@@ -733,11 +738,15 @@
           "refId": "A"
         }
       ],
+
       "title": "Tire Pressure (Front Left)",
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1179,7 +1188,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1265,7 +1277,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1426,7 +1441,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "9.1.6",
       "targets": [
         {
           "datasource": {
@@ -1520,7 +1535,10 @@
       "type": "timeseries"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "influxdb",
+        "uid": "WM5SI3n4k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1608,7 +1626,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "3VnHIq74z"
+        "uid": "WM5SI3n4k"
       },
       "fieldConfig": {
         "defaults": {
@@ -1681,6 +1699,7 @@
           "sort": "none"
         }
       },
+
       "targets": [
         {
           "datasource": {
@@ -1691,6 +1710,7 @@
           "refId": "A"
         }
       ],
+
       "title": "Tire Pressure (Back Right)",
       "type": "timeseries"
     },
