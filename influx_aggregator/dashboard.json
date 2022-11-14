@@ -288,7 +288,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_voltage\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -377,7 +377,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_temp\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -466,7 +466,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_range\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"BATTERY\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"battery_range\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -555,7 +555,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_speed\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_speed\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -644,7 +644,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_distance\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"MOTOR\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"motor_distance\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -891,7 +891,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_L_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_L_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -980,7 +980,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_R_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_R_indicator\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -1069,7 +1069,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_horn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_horn\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
@@ -1158,7 +1158,7 @@
             "type": "influxdb",
             "uid": "WM5SI3n4k"
           },
-          "query": "from(bucket: \"bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_cruise_control\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
+          "query": "from(bucket: \"wireless_telemetry\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"ICONS\")\r\n  |> filter(fn: (r) => r[\"_field\"] == \"icon_cruise_control\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean\")",
           "refId": "A"
         }
       ],
