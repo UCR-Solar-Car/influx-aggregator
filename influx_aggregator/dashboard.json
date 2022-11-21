@@ -24,15 +24,12 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3VnHIq74z"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -118,10 +115,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "3VnHIq74z"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1370,7 +1364,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.6",
+      "pluginVersion": "9.2.5",
       "targets": [
         {
           "datasource": {
@@ -1687,8 +1681,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1737,6 +1730,6 @@
   "timezone": "",
   "title": "Car Data",
   "uid": "lH2UIfS4z",
-  "version": 4,
+  "version": 2,
   "weekStart": ""
 }
