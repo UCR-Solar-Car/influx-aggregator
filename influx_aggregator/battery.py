@@ -1,12 +1,12 @@
 class Battery:
 
     def __init__(self):
-        self._battery_voltage : float = 0.0
-        self._battery_temperature : float = 0.0
-        self._battery_warning : bool = False
-        self._bps_fault : bool = False
-        self._automatic_power_opening : bool =  False
-        self._range : float = 0.0
+        self._battery_voltage: float = 0.0
+        self._battery_temperature: float = 0.0
+        self._battery_warning: bool = False
+        self._bps_fault: bool = False
+        self._automatic_power_opening: bool = False
+        self._range: float = 0.0
 
     def set_voltage(self, voltage) -> None:
         self._battery_voltage = voltage

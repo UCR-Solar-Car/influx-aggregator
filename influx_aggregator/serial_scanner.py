@@ -4,10 +4,10 @@ import serial
 import time
 
 
-print(PORT)
+print("PORT")
 i = 0
     
-ser = serial.Serial(PORT, 9600, timeout = 5)
+ser = serial.Serial("COM8", 9600, timeout = 5)
 time.sleep(2)
 
 
