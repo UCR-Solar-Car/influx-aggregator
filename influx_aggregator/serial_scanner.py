@@ -1,12 +1,15 @@
-from serial import Serial
+#pylint: disable=too-few-public-methods
+
+import serial
+import time
 
 
-class SerialScanner:
-    port = ''
-    #ser = Serial(port)
-    ser = Serial.Serial(port,
-                    baudrate=9600,
-					parity=Serial.PARITY_NONE,
-					stopbits=Serial.STOPBITS_ONE)
-    bytesToRead = ser.inWaiting()
-    ser.read(bytesToRead)
+print(PORT)
+i = 0
+    
+ser = serial.Serial(PORT, 9600, timeout = 5)
+time.sleep(2)
+
+
+# while ser.inWaiting() > 0:
+#     print(ser.readline())
