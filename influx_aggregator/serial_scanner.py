@@ -18,12 +18,12 @@ env = Env()
 def env_setup():
     env = Env()
     env.read_env(".env-dev")
-    PORT = env("PORT")
-    print(PORT)
-    TOKEN = env("TOKEN")
-    ORG = env("ORG")
-    BUCKET = env("BUCKET")
-    return PORT, TOKEN, BUCKET, ORG
+    PORT_NUM = env("PORT")
+    #print(PORT)
+    TOKEN_NUM = env("TOKEN")
+    ORG_NAME = env("ORG")
+    BUCKET_NAME = env("BUCKET")
+    return PORT_NUM, TOKEN_NUM, BUCKET_NAME, ORG_NAME
 
 
 i = 0
