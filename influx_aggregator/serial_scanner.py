@@ -1,29 +1,29 @@
 #pylint: disable=too-few-public-methods
-
-import serial
 import time
+import serial
+
 
 from environs import Env
 #!/usr/bin/env python
 #pylint: disable=import-error
-import time
+
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 ENVIRONMENT = "dev"
 
-env = Env()
+
 
 
 def env_setup():
     env = Env()
     env.read_env(".env-dev")
-    PORT_NUM = env("PORT")
+    port_es = env("PORT")
     #print(PORT)
-    TOKEN_NUM = env("TOKEN")
-    ORG_NAME = env("ORG")
-    BUCKET_NAME = env("BUCKET")
-    return PORT_NUM, TOKEN_NUM, BUCKET_NAME, ORG_NAME
+    token_es= env("TOKEN")
+    org_es = env("ORG")
+    bucket_es = env("BUCKET")
+    return port_es, token_es, org_es, bucket_es
 
 
 i = 0
@@ -37,18 +37,18 @@ ser = serial.Serial(port, 9600, timeout=5)
 time.sleep(2)
 
 while ser.inWaiting() > 0:
-    line = str(ser.readline())
-    line = line.strip("',/\\n")
-    line = line.strip("',/\\r")
-    line = line.strip("b")
-    line = line.strip("'")
-    line = line.strip("\'")
-    line = line.split(",")
+    LINE = str(ser.readline())
+    LINE = LINE.strip("',/\\n")
+    LINE = LINE.strip("',/\\r")
+    LINE = LINE.strip("b")
+    LINE = LINE.strip("'")
+    LINE = LINE.strip("\'")
+    LINE = LINE.split(",")
 
-    print(line)
+    print(LINE)
     with InfluxDBClient(url="http://localhost:8086", token=token,
                         org=org) as client:
         write_api = client.write_api(write_options=SYNCHRONOUS)
         write_api.write(
             bucket, org,
-            Point(line[0].strip(" ")).field(line[1].strip(" "), int(line[2])))
+            Point(LINE[0].strip(" ")).field(LINE[1].strip(" "), int(LINE[2])))
