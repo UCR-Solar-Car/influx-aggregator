@@ -19,11 +19,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install poetry
-          poetry install
+          pip install pylint
       - name: Analysing the code with pylint
         run: |
-          poetry run pylint influx_aggregator/
+          pylint influx_aggregator/
   formatting:
     runs-on: ubuntu-latest
     strategy:
@@ -38,27 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install poetry
-          poetry install
+          pip install yapf
       - name: Checking code formatting with YAPF
         run: |
-          poetry run yapf influx_aggregator/ -dr
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10"]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install poetry
-          poetry install
-      - name: Build project using Poetry
-        run: |
-          poetry build
+          yapf influx_aggregator/ -dr
