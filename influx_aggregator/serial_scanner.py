@@ -47,11 +47,12 @@ while ser.inWaiting() > 0:
     line = line.strip("\'")
     line = line.split(",")
     
+    
     print(line)
-    # with InfluxDBClient(url="http://localhost:8086", token=token,
-    #                     org=org) as client:
-    #     write_api = client.write_api(write_options=SYNCHRONOUS)
-    #     write_api.write(
-    #             bucket, org,
-    #             Point(line[0]).field(
-    #                 line[1], line[2]))
+    with InfluxDBClient(url="http://localhost:8086", token=token,
+                        org=org) as client:
+        write_api = client.write_api(write_options=SYNCHRONOUS)
+        write_api.write(
+                bucket, org,
+                Point(line[0].strip(" ")).field(
+                    line[1].strip(" "), (int)line[2]))
