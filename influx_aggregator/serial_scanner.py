@@ -2,7 +2,6 @@
 import time
 import serial
 
-
 from environs import Env
 #!/usr/bin/env python
 #pylint: disable=import-error
@@ -13,14 +12,12 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 ENVIRONMENT = "dev"
 
 
-
-
 def env_setup():
     env = Env()
     env.read_env(".env-dev")
     port_es = env("PORT")
     #print(PORT)
-    token_es= env("TOKEN")
+    token_es = env("TOKEN")
     org_es = env("ORG")
     bucket_es = env("BUCKET")
     return port_es, token_es, org_es, bucket_es
