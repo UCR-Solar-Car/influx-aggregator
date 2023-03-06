@@ -18,8 +18,9 @@ def env_setup():
     port_env = env("PORT")
     token_env = env("TOKEN")
     org_env = env("ORG")
-    bucket_env= env("BUCKET")
+    bucket_env = env("BUCKET")
     return port_env, token_env, org_env, bucket_env
+
 
 port, token, org, bucket = env_setup()
 
@@ -27,7 +28,7 @@ ser = serial.Serial(port, 9600, timeout=5)
 time.sleep(2)
 
 with InfluxDBClient(url="http://localhost:8086", token=token,
-                        org=org) as client:
+                    org=org) as client:
     write_api = client.write_api(write_options=SYNCHRONOUS)
 
     while True:
@@ -41,6 +42,5 @@ with InfluxDBClient(url="http://localhost:8086", token=token,
             LINE = LINE.split(",")
 
             if len(LINE) == 3:
-                write_api.write(
-                    bucket, org,
-                    Point(LINE[0]).field(LINE[1], int(LINE[2])))
+                write_api.write(bucket, org,
+                                Point(LINE[0]).field(LINE[1], int(LINE[2])))
